@@ -72,3 +72,219 @@ a { color: var(--brand); text-decoration: none; }
   transform: translateY(-2px);  /* a subtle lift on hover */
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
+.button-ghost {
+  background: transparent;
+  color: var(--brand);
+  border: 2px solid var(--brand);
+  padding: calc(0.75rem - 2px) calc(1.75rem - 2px); /* keep total size matching .button */
+}
+.button-ghost:hover {
+  background: var(--brand);
+  color: white;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* active nav link gets an underline */
+.nav-links a.active {
+  border-bottom: 2px solid var(--brand);
+}
+
+/* ---- shared page layout ---- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.section {
+  padding: 3rem 0;
+}
+.section-title {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* sub-page header banner */
+.page-header {
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+  background: var(--bg-soft);
+}
+.page-header h1 {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+}
+.page-header p {
+  color: var(--muted);
+  max-width: 50ch;
+  margin: 0.5rem auto 0;
+}
+
+/* ---- card grid (home + experience) ---- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+a.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--brand);
+}
+.card p {
+  color: var(--muted);
+}
+.card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+/* ---- projects ---- */
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+.project:last-child {
+  border-bottom: none;
+}
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+.project-gallery img:first-child {
+  grid-column: 1 / -1;   /* hero image spans both columns */
+  border-radius: 10px;
+}
+.project-gallery img {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.project-body-full {
+  grid-column: 1 / -1;   /* projects with no gallery span full width */
+}
+.project-body h2 {
+  margin-bottom: 0.25rem;
+}
+.project-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+/* tag pills + bullet lists */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+.tag-list li {
+  background: var(--bg-soft);
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 0.25rem 0.85rem;
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+.bullet-list {
+  margin: 0.5rem 0 0 1.25rem;
+  color: var(--muted);
+}
+.bullet-list li {
+  margin-bottom: 0.35rem;
+}
+
+/* ---- timeline (education + experience) ---- */
+.timeline {
+  position: relative;
+  margin-left: 0.5rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid #e5e7eb;
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+.timeline-marker {
+  position: absolute;
+  left: calc(-1.5rem - 7px);   /* sit on top of the line */
+  top: 0.4rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+.timeline-content h2 {
+  font-size: 1.25rem;
+}
+.timeline-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ---- footer ---- */
+.footer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: var(--bg-soft);
+  border-top: 1px solid #e5e7eb;
+  color: var(--muted);
+}
+.footer .section-title {
+  color: var(--ink);
+}
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.footer-copy {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+}
+
+/* ---- responsive ---- */
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .project {
+    grid-template-columns: 1fr;   /* stack image + text on mobile */
+  }
+}

@@ -3,32 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logan Marshall Website!!</title>
+    <title>Logan Marshall</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="navbar">
-      <div class="logo">LoMa</div>
+      <a class="logo" href="index.html">Logan Marshall</a>
       <nav>
         <ul class="nav-links">
-          <li><a href="#Projects">Projects</a></li>
-          <li><a href="#Resume">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="experience.html">Experience</a></li>
           <li>
             <a
               href="https://www.linkedin.com/in/logan-marshall-cu/"
               target="_blank"
+              rel="noopener"
               >LinkedIn</a
             >
           </li>
-          <li><a href="#Contact">Contact Me</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
+
     <section class="hero">
       <h1>Logan Marshall</h1>
-      <a href="images/basketballshot.png"></a>
-      <p>Intro about who I am and what I want to do.</p>
-      <a href="#Projects" class="button">Projects </a>
+      <p>
+        Intro about who I am and what I want to do. Mechanical engineer,
+        builder, and problem-solver based in Colorado.
+      </p>
+      <div class="hero-actions">
+        <a href="projects.html" class="button">View Projects</a>
+        <a href="#contact" class="button button-ghost">Get in Touch</a>
+      </div>
     </section>
+
+    <main>
+      <section class="section">
+        <h2 class="section-title">Explore</h2>
+        <div class="card-grid">
+          <a class="card" href="projects.html">
+            <h3>Projects</h3>
+            <p>
+              A look at the things I've designed, built, and tinkered with —
+              from CAD models to code.
+            </p>
+            <span class="card-link">See projects &rarr;</span>
+          </a>
+          <a class="card" href="education.html">
+            <h3>Education</h3>
+            <p>
+              My academic background, coursework, and the skills I've picked up
+              along the way.
+            </p>
+            <span class="card-link">See education &rarr;</span>
+          </a>
+          <a class="card" href="experience.html">
+            <h3>Experience</h3>
+            <p>
+              Work, leadership, athletics, and other experiences that shaped how
+              I approach problems.
+            </p>
+            <span class="card-link">See experience &rarr;</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="footer">
+      <h2 class="section-title">Contact Me</h2>
+      <p>I'd love to connect. Reach out through any of the links below.</p>
+      <div class="footer-links">
+        <a href="mailto:logan.marshall@colorado.edu">Email</a>
+        <a
+          href="https://www.linkedin.com/in/logan-marshall-cu/"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+      </div>
+      <p class="footer-copy">&copy; 2026 Logan Marshall</p>
+    </footer>
   </body>
 </html>
