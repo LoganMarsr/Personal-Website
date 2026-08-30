@@ -563,11 +563,8 @@ a.card:hover .card-link .arrow { transform: translateX(4px); }
   align-content: start;
 }
 
-/* two-image galleries where the source files are small: keep them
-   side by side and capped so nothing gets upscaled into mush */
-.project-gallery--pair {
-  max-width: 460px;
-}
+/* two-image galleries: one landscape + one portrait shot sit better
+   side by side on a square crop than as a hero-plus-orphan-thumb */
 .project-gallery--pair .shot img { aspect-ratio: 1 / 1; }
 .shot {
   position: relative;
@@ -1087,7 +1084,7 @@ a.card:hover .card-link .arrow { transform: translateX(4px); }
 }
 .portrait img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 .portrait-tag {

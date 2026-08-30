@@ -39,9 +39,10 @@ python3 -m http.server 8000
 ## Updating content
 
 - **Resume** — replace `assets/Logan-Marshall-Resume.pdf`, keeping the filename.
-- **Portrait** — save a photo as `images/logan-portrait.jpg` and point the
-  `<img>` in the `.portrait` block of `index.html` at it (currently showing
-  `images/portrait-placeholder.svg`).
+- **Portrait** — replace `images/headshot.jpg`. It is displayed square, so a
+  square source crops best; 800x800 or larger stays sharp on retina screens.
+- **Photos from an iPhone** — convert `.heic` to `.jpg` before committing;
+  browsers cannot display HEIC.
 - **New project** — copy an `<article class="project">` block in
   `projects.html`, bump the number, and swap the gallery. Projects without
   photos use a `.datacard` spec table instead of a gallery.

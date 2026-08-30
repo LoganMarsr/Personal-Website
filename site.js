@@ -35,7 +35,7 @@
       box.classList.remove("is-open");
       box.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
-      boxImg.src = "";
+      boxImg.removeAttribute("src");
       if (lastFocus) lastFocus.focus();
     }
 
