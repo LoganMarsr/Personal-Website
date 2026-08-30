@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <rect width="400" height="500" fill="#0f1b2a"/>
+  <g stroke="#38bdf8" stroke-opacity="0.10" stroke-width="1">
+    <path d="M0 50h400M0 100h400M0 150h400M0 200h400M0 250h400M0 300h400M0 350h400M0 400h400M0 450h400"/>
+    <path d="M50 0v500M100 0v500M150 0v500M200 0v500M250 0v500M300 0v500M350 0v500"/>
+  </g>
+  <g fill="none" stroke="#38bdf8" stroke-opacity="0.55" stroke-width="2">
+    <circle cx="200" cy="205" r="52"/>
+    <path d="M118 330c0-45 37-72 82-72s82 27 82 72"/>
+  </g>
+  <text x="200" y="410" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-size="15" letter-spacing="3" fill="#8ca3bd" text-anchor="middle">PORTRAIT</text>
+  <text x="200" y="434" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-size="11" letter-spacing="2" fill="#5c728c" text-anchor="middle">AWAITING UPLOAD</text>
+</svg>

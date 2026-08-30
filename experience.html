@@ -4,99 +4,349 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Experience — Logan Marshall</title>
+    <meta
+      name="description"
+      content="Logan Marshall's engineering experience: design engineering at C-CONNEX, two AI engineering internships at Pure Fishing, plus leadership in Tau Beta Pi and AIAA Design/Build/Fly."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Experience — Logan Marshall" />
+    <meta
+      property="og:description"
+      content="Design engineering, AI internships, and engineering leadership at CU Boulder."
+    />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="navbar">
-      <a class="logo" href="index.html">Logan Marshall</a>
-      <nav>
-        <ul class="nav-links">
+      <div class="nav-inner">
+        <a class="logo" href="index.html">
+          <span class="logo-mark" aria-hidden="true">LM</span>
+          Logan Marshall
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          MENU
+        </button>
+        <ul class="nav-links" id="nav-links">
           <li><a href="projects.html">Projects</a></li>
+          <li><a href="experience.html" class="active" aria-current="page">Experience</a></li>
           <li><a href="education.html">Education</a></li>
-          <li><a href="experience.html" class="active">Experience</a></li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/logan-marshall-cu/"
-              target="_blank"
-              rel="noopener"
-              >LinkedIn</a
-            >
-          </li>
           <li><a href="index.html#contact">Contact</a></li>
+          <li>
+            <a class="nav-cta" href="assets/Logan-Marshall-Resume.pdf" target="_blank" rel="noopener">
+              Resume ↓
+            </a>
+          </li>
         </ul>
-      </nav>
+      </div>
     </header>
 
     <section class="page-header">
-      <h1>Experience</h1>
-      <p>Work, leadership, athletics, and the experiences that shaped me.</p>
+      <div class="wrap">
+        <p class="label">Track Record</p>
+        <h1>Experience</h1>
+        <p>
+          Three engineering internships across a fiber optics startup and a global
+          outdoor brand, plus the teams and roles I've led on campus.
+        </p>
+      </div>
     </section>
 
-    <main>
+    <main id="main">
       <section class="section">
-        <h2 class="section-title">Work &amp; Internships</h2>
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h2>Role / Title</h2>
-              <p class="timeline-meta">Company &middot; Dates</p>
-              <ul class="bullet-list">
-                <li>Describe a key responsibility or accomplishment.</li>
-                <li>Highlight a measurable result or impact.</li>
-                <li>Note a skill or tool you used heavily.</li>
-              </ul>
-            </div>
-          </article>
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="label">01 / Professional</p>
+            <h2>Work &amp; internships</h2>
+            <p class="dim" aria-hidden="true"><span></span></p>
+          </div>
 
-          <article class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h2>Previous Role</h2>
-              <p class="timeline-meta">Company &middot; Dates</p>
-              <ul class="bullet-list">
-                <li>Add details about this experience.</li>
-                <li>What did you do and what came of it?</li>
-              </ul>
-            </div>
-          </article>
+          <div class="timeline reveal">
+            <article class="timeline-item is-current">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div>
+                    <h3>AI Development Engineering Intern</h3>
+                    <p class="timeline-org">Pure Fishing</p>
+                  </div>
+                  <span class="timeline-date">May – Aug 2026</span>
+                </div>
+                <ul class="bullet-list">
+                  <li>
+                    Integrated a custom <strong>Bland AI voice agent</strong> and
+                    <strong>Gorgias</strong> AI chat and email bot into the customer
+                    service CRM platform.
+                  </li>
+                  <li>
+                    Increased the automated ticket resolution rate to
+                    <strong>29%</strong>.
+                  </li>
+                </ul>
+                <ul class="tag-list">
+                  <li>Systems Integration</li>
+                  <li>CRM Automation</li>
+                  <li>Python</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div>
+                    <h3>AI Development Engineering Intern</h3>
+                    <p class="timeline-org">Pure Fishing</p>
+                  </div>
+                  <span class="timeline-date">May – Aug 2025</span>
+                </div>
+                <p class="award">🏆 1st place — internship program, 5 teams</p>
+                <ul class="bullet-list">
+                  <li>
+                    <strong>Won first place</strong> out of five teams and was selected
+                    to present AI initiatives and research on-site at the Charleston,
+                    SC headquarters town hall to the
+                    <strong>CEO, CFO, CPO, and 300+ employees</strong>.
+                  </li>
+                  <li>
+                    Increased production rate of video storyboard and script generation
+                    by <strong>450%</strong> while keeping costs
+                    <strong>under $60/month</strong>.
+                  </li>
+                  <li>
+                    Designed and implemented an AI-powered
+                    <strong>Retrieval-Augmented Generation (RAG)</strong> system in
+                    Python.
+                  </li>
+                  <li>
+                    Integrated external APIs and applied <strong>LoRA-based
+                    fine-tuning</strong> for brand-aligned creative outputs.
+                  </li>
+                  <li>
+                    Led model evaluation, rapid prototyping, and full deployment of an
+                    end-to-end AI system within a 12-week timeline.
+                  </li>
+                </ul>
+                <p style="margin-top: 0.9rem; font-size: 0.92rem">
+                  <a href="projects.html#rag-system">Read the full project breakdown →</a>
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div>
+                    <h3>Junior Design Engineer</h3>
+                    <p class="timeline-org">C-CONNEX</p>
+                  </div>
+                  <span class="timeline-date">May 2023 – Dec 2025</span>
+                </div>
+                <ul class="bullet-list">
+                  <li>
+                    Designed <strong>10+ fiber optic hardware models</strong> in
+                    SolidWorks — racks, panels, and adapter plates.
+                  </li>
+                  <li>
+                    Improved manufacturability and durability of designs, accelerating
+                    client approval cycles.
+                  </li>
+                  <li>
+                    Conducted rapid prototyping through 3D printing in cooperation with
+                    the lead Design Engineer.
+                  </li>
+                  <li>
+                    Held multiple roles in a startup environment to deliver on-time
+                    engineering outputs.
+                  </li>
+                </ul>
+                <ul class="tag-list">
+                  <li>SolidWorks</li>
+                  <li>DFM</li>
+                  <li>Sheet Metal</li>
+                  <li>3D Printing</li>
+                  <li>Technical Drawings</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="leadership">
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="label">02 / Leadership</p>
+            <h2>Teams I've led and built</h2>
+            <p class="dim" aria-hidden="true"><span></span></p>
+          </div>
+
+          <div class="timeline reveal">
+            <article class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div>
+                    <h3>Membership Director</h3>
+                    <p class="timeline-org">Tau Beta Pi Engineering Honor Society</p>
+                  </div>
+                  <span class="timeline-date">Aug 2024 – Dec 2025</span>
+                </div>
+                <ul class="bullet-list">
+                  <li>
+                    Increased active membership by <strong>125%</strong> through
+                    targeted outreach, recruitment events, and participation analytics.
+                  </li>
+                  <li>
+                    Treated retention as a measurement problem — tracked which events
+                    actually converted attendees into active members, then doubled down
+                    on those.
+                  </li>
+                </ul>
+                <ul class="tag-list">
+                  <li>Recruitment</li>
+                  <li>Event Planning</li>
+                  <li>Analytics</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <div class="timeline-head">
+                  <div>
+                    <h3>Design Team Member</h3>
+                    <p class="timeline-org">Design Build Fly (DBF) Competition Team</p>
+                  </div>
+                  <span class="timeline-date">Aug 2024 – Dec 2025</span>
+                </div>
+                <ul class="bullet-list">
+                  <li>
+                    Assisted in designing an RC airplane with autonomous glider
+                    deployment for the AIAA Design/Build/Fly competition.
+                  </li>
+                  <li>
+                    Conducted <strong>whiffletree analysis</strong> for distributed wing
+                    load testing and modeled key components in SolidWorks.
+                  </li>
+                  <li>
+                    CU team placed in the <strong>top half of 92 teams</strong> at the
+                    international competition.
+                  </li>
+                </ul>
+                <p style="margin-top: 0.9rem; font-size: 0.92rem">
+                  <a href="projects.html#dbf">Read the full project breakdown →</a>
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
       <section class="section">
-        <h2 class="section-title">Other Experiences</h2>
-        <div class="card-grid">
-          <div class="card">
-            <h3>Athletics</h3>
-            <p>
-              Basketball and the discipline, teamwork, and competitiveness that
-              come with it. Add your story here.
-            </p>
+        <div class="wrap">
+          <div class="section-head reveal">
+            <p class="label">03 / Beyond the Lab</p>
+            <h2>The rest of it</h2>
+            <p class="dim" aria-hidden="true"><span></span></p>
           </div>
-          <div class="card">
-            <h3>Leadership</h3>
-            <p>
-              Clubs, teams, or roles where you led others. Describe what you
-              organized or improved.
-            </p>
+
+          <div class="card-grid">
+            <div class="card bracketed reveal">
+              <p class="label">Athletics</p>
+              <h3>Competitive Basketball</h3>
+              <p>
+                Years of competitive team basketball. The habits carry over more
+                than people expect: show up early, do the unglamorous reps, and take
+                the shot when it's yours.
+              </p>
+            </div>
+
+            <div class="card bracketed reveal">
+              <p class="label">Certification</p>
+              <h3>SolidWorks CSWA &amp; CSWP</h3>
+              <p>
+                Certified Associate and Certified Professional. Independently earned —
+                proof the CAD work on my projects page isn't a fluke of one good
+                semester.
+              </p>
+            </div>
+
+            <div class="card bracketed reveal">
+              <p class="label">Shop</p>
+              <h3>Hands-On Fabrication</h3>
+              <p>
+                MIG welding, manual mills and lathes, CNC, and 3D printing. I'd rather
+                cut the part myself than hand a drawing over the wall and hope.
+              </p>
+            </div>
           </div>
-          <div class="card">
-            <h3>Volunteering</h3>
-            <p>
-              Community involvement and the causes you care about. Add the
-              details that matter to you.
-            </p>
+        </div>
+      </section>
+
+      <section class="section contact">
+        <div class="wrap">
+          <p class="label">Contact</p>
+          <h2>Hiring for Summer 2027?</h2>
+          <p class="dim" aria-hidden="true"><span></span></p>
+          <p>
+            I'm looking for a mechanical engineering internship where design work and
+            shop work land in the same week.
+          </p>
+          <div class="contact-links">
+            <a class="button" href="mailto:Logan.marshall@colorado.edu">Email Me</a>
+            <a
+              class="button button-ghost"
+              href="assets/Logan-Marshall-Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >Resume ↓</a
+            >
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <p>
-        Curious about my work? Head to the
-        <a href="projects.html">projects page</a>.
+    <footer class="titleblock">
+      <div class="titleblock-grid">
+        <div class="tb-cell">
+          <p class="tb-key">Drawn By</p>
+          <p class="tb-value">Logan James Marshall</p>
+          <p class="tb-links" style="margin-top: 0.6rem">
+            <a href="mailto:Logan.marshall@colorado.edu">Email</a>
+            <a href="https://www.linkedin.com/in/logan-marshall-cu/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/LoganMarsr" target="_blank" rel="noopener">GitHub</a>
+          </p>
+        </div>
+        <div class="tb-cell">
+          <p class="tb-key">Span</p>
+          <p class="tb-value">2022 – Present</p>
+        </div>
+        <div class="tb-cell">
+          <p class="tb-key">Sheet</p>
+          <p class="tb-value">04 / 04 — Experience</p>
+        </div>
+      </div>
+      <p class="tb-note">
+        <span>&copy; 2026 Logan Marshall</span>
+        <span>University of Colorado Boulder · Mechanical Engineering</span>
       </p>
-      <p class="footer-copy">&copy; 2026 Logan Marshall</p>
     </footer>
+
+    <script src="site.js"></script>
   </body>
 </html>
