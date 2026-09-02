@@ -680,6 +680,34 @@ a.card:hover .card-link .arrow { transform: translateX(4px); }
 }
 
 /* ============================================================
+   Project framing (projects page only)
+   Each project is roughly one viewport tall, so a gentle snap lets
+   scrolling settle with one project framed instead of straddling two.
+   `proximity` rather than `mandatory`: it nudges when you land close and
+   never fights a deliberate scroll past.
+   ============================================================ */
+
+/* Only where it actually helps: the two-column project layout (>900px)
+   and a viewport tall enough to frame a project. Narrower or shorter and
+   projects run well past the screen, where snapping would just fight the
+   reader. */
+/* CSS scroll-snap is deliberately NOT used here. With ~800px between
+   projects, `proximity` pulls back to the nearest point on every small
+   scroll, so a reader nudging the wheel one notch at a time can never
+   leave the first project. site.js does the framing instead: it settles
+   only when a scroll ends already close to a project, and never re-targets
+   the one just left. */
+@media (min-width: 901px) and (min-height: 760px) {
+  html.snap-projects .project {
+    /* Fill the viewport below the navbar so a framed project leaves no
+       room for its neighbours. Shorter projects grow into the space and
+       centre their content; taller ones overflow and scroll normally. */
+    min-height: calc(100vh - 6.25rem);
+    align-content: center;
+  }
+}
+
+/* ============================================================
    Tags + bullets
    ============================================================ */
 
@@ -935,40 +963,6 @@ a.card:hover .card-link .arrow { transform: translateX(4px); }
   gap: 0.9rem;
   justify-content: center;
 }
-
-/* details block under the buttons - real information, title-block styling */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 1px;
-  width: 100%;
-  margin: 3.75rem 0 0;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  text-align: left;
-}
-.contact-grid > div {
-  background: rgba(15, 27, 42, 0.9);
-  padding: 1.15rem 1.35rem;
-}
-.contact-grid dt {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.4rem;
-}
-.contact-grid dd {
-  margin: 0;
-  font-size: 0.92rem;
-  color: var(--ink);
-  overflow-wrap: anywhere;
-}
-.contact-grid a { color: var(--ink); transition: color 0.18s ease; }
-.contact-grid a:hover { color: var(--accent); }
 
 /* a heftier primary CTA for the contact block */
 .button-lg {

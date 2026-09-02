@@ -66,6 +66,72 @@
     });
   }
 
+  /* ---- gentle project framing (projects page) ----
+     Settles onto a project only when a scroll has ALREADY come to rest
+     near one, so ordinary scrolling is never fought. The project just
+     departed is excluded as a target until the reader has moved well
+     clear of it, which is what stops the pull-back loop that CSS
+     scroll-snap's `proximity` mode produces at this section size. */
+  var root = document.documentElement;
+  if (root.classList.contains("snap-projects")) {
+    var items = [].slice.call(document.querySelectorAll(".project"));
+    var motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var NEAR = 260;      // settle only inside this distance
+    var MIN_MOVE = 8;    // ignore sub-pixel tidying
+    var lastId = null;
+    var quietUntil = 0;
+    var settleTimer;
+
+    var active = function () {
+      return items.length &&
+        !motion.matches &&
+        window.innerWidth > 900 &&
+        window.innerHeight >= 760 &&
+        !document.querySelector(".lightbox.is-open");
+    };
+
+    var idealFor = function (el) {
+      var nav = document.querySelector(".navbar");
+      var pad = nav ? nav.getBoundingClientRect().height : 0;
+      var docTop = el.getBoundingClientRect().top + window.scrollY;
+      var slack = Math.max(0, window.innerHeight - pad - el.offsetHeight);
+      return Math.round(docTop - pad - slack / 2);
+    };
+
+    var settle = function () {
+      if (!active() || Date.now() < quietUntil) return;
+      var y = window.scrollY;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (y <= 2 || y >= max - 2) { lastId = null; return; }
+
+      // once well clear of the last target, allow returning to it
+      if (lastId) {
+        var prev = document.getElementById(lastId);
+        if (!prev || Math.abs(idealFor(prev) - y) > NEAR * 2) lastId = null;
+      }
+
+      var best = null, bestDist = Infinity;
+      items.forEach(function (el) {
+        if (el.id && el.id === lastId) return;
+        var d = Math.abs(idealFor(el) - y);
+        if (d < bestDist) { bestDist = d; best = el; }
+      });
+      if (!best || bestDist > NEAR || bestDist < MIN_MOVE) return;
+
+      lastId = best.id;
+      quietUntil = Date.now() + 700;
+      window.scrollTo({
+        top: Math.max(0, Math.min(max, idealFor(best))),
+        behavior: "smooth"
+      });
+    };
+
+    window.addEventListener("scroll", function () {
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(settle, 150);
+    }, { passive: true });
+  }
+
   /* ---- scroll reveal ---- */
   var reveals = document.querySelectorAll(".reveal");
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
