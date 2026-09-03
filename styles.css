@@ -542,6 +542,7 @@ a.card:hover .card-link .arrow { transform: translateX(4px); }
    Projects
    ============================================================ */
 
+
 .project {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
@@ -549,6 +550,7 @@ a.card:hover .card-link .arrow { transform: translateX(4px); }
   align-items: start;
   padding: clamp(2.25rem, 5vw, 3.5rem) 0;
   border-bottom: 1px solid var(--line);
+  margin-bottom: 100px
 }
 .project:last-of-type { border-bottom: 0; }
 /* alternate the image side for rhythm */
