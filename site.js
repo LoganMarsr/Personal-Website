@@ -18,24 +18,50 @@
   var box = document.getElementById("lightbox");
   if (box) {
     var boxImg = box.querySelector("img");
+    var boxVid = box.querySelector("video");
     var boxCap = box.querySelector(".lightbox-caption");
     var lastFocus = null;
 
-    function open(src, alt, caption) {
-      lastFocus = document.activeElement;
-      boxImg.src = src;
-      boxImg.alt = alt || "";
+    function reveal(caption) {
       boxCap.textContent = caption || "";
       box.classList.add("is-open");
       box.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
       box.querySelector(".lightbox-close").focus();
     }
+    function open(src, alt, caption) {
+      lastFocus = document.activeElement;
+      if (boxVid) boxVid.hidden = true;
+      boxImg.hidden = false;
+      boxImg.src = src;
+      boxImg.alt = alt || "";
+      reveal(caption);
+    }
+    function openVideo(src, caption) {
+      if (!boxVid) return;
+      lastFocus = document.activeElement;
+      boxImg.hidden = true;
+      boxImg.removeAttribute("src");
+      boxVid.hidden = false;
+      boxVid.src = src;
+      reveal(caption);
+      // the click that opened this counts as the gesture; if a browser still
+      // declines, the controls are right there
+      var played = boxVid.play();
+      if (played && played.catch) played.catch(function () {});
+    }
     function close() {
       box.classList.remove("is-open");
       box.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
       boxImg.removeAttribute("src");
+      if (boxVid) {
+        boxVid.pause();
+        boxVid.removeAttribute("src");
+        boxVid.load();          // drop the buffered clip
+        boxVid.hidden = true;
+      }
+      boxImg.hidden = false;
       if (lastFocus) lastFocus.focus();
     }
 
@@ -45,9 +71,19 @@
       if (!img) return;
       shot.setAttribute("role", "button");
       shot.setAttribute("tabindex", "0");
-      shot.setAttribute("aria-label", "Enlarge: " + (img.alt || "project image"));
+      shot.setAttribute(
+        "aria-label",
+        (shot.hasAttribute("data-video") ? "Play video: " : "Enlarge: ") +
+          (img.alt || "project image")
+      );
       function fire() {
-        open(img.currentSrc || img.src, img.alt, tag ? tag.textContent : "");
+        // read at activation so the attribute stays the source of truth
+        var video = shot.getAttribute("data-video");
+        if (video) {
+          openVideo(video, shot.getAttribute("data-caption") || (tag ? tag.textContent : ""));
+        } else {
+          open(img.currentSrc || img.src, img.alt, tag ? tag.textContent : "");
+        }
       }
       shot.addEventListener("click", fire);
       shot.addEventListener("keydown", function (e) {
