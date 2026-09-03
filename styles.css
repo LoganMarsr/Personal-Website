@@ -66,6 +66,12 @@ body {
 img { max-width: 100%; height: auto; display: block; }
 a   { color: var(--accent); text-decoration: none; }
 
+/* The hidden attribute must win. A plain `display` rule on an element
+   (e.g. `.lightbox video { display: block }`) is author CSS and so beats
+   the browser's default [hidden] rule, leaving a "hidden" element still
+   laid out and painted. */
+[hidden] { display: none !important; }
+
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
