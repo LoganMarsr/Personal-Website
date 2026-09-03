@@ -594,6 +594,51 @@ a.card:hover .card-link .arrow { transform: translateX(4px); }
 /* two-image galleries: one landscape + one portrait shot sit better
    side by side on a square crop than as a hero-plus-orphan-thumb */
 .project-gallery--pair .shot img { aspect-ratio: 1 / 1; }
+
+/* video tile: spans the gallery, wide crop of the poster frame, play badge.
+   Kept as a thumbnail rather than an inline player so the project still
+   fits one screenful - the clip opens full size in the lightbox. */
+.shot-video { grid-column: 1 / -1; }
+.project-gallery .shot-video img,
+.project-gallery--pair .shot-video img {
+  aspect-ratio: 16 / 10;
+  /* the source is a 9:16 phone clip and the subject sits high in frame,
+     so bias the crop upward instead of taking the middle band */
+  object-position: center 26%;
+}
+.shot-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  background: rgba(11, 20, 32, 0.72);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  pointer-events: none;
+  transition: background 0.22s ease, transform 0.22s ease;
+}
+/* the triangle, drawn with a border so it needs no glyph or asset */
+.shot-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 9px 0 9px 14px;
+  border-color: transparent transparent transparent var(--accent);
+}
+.shot-video:hover .shot-play {
+  background: var(--accent);
+  transform: translate(-50%, -50%) scale(1.06);
+}
+.shot-video:hover .shot-play::after {
+  border-left-color: #04121e;
+}
 .shot {
   position: relative;
   border: 1px solid var(--line);
@@ -993,6 +1038,15 @@ a.card:hover .card-link .arrow { transform: translateX(4px); }
   max-width: min(1100px, 100%);
   max-height: 82vh;
   object-fit: contain;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+}
+.lightbox video {
+  display: block;
+  margin-inline: auto;
+  max-width: min(460px, 100%);   /* the clip is portrait */
+  max-height: 80vh;
+  background: #000;
   border: 1px solid var(--line-2);
   border-radius: var(--radius);
 }
