@@ -3,7 +3,7 @@
 Personal portfolio site for mechanical engineering internship applications.
 Static HTML/CSS/JS, no build step.
 
-**Live site:** [_(enable GitHub Pages — see below)_](https://loganmarsr.github.io/Personal-Website/index.html)
+**Live site:** (https://loganmarsr.github.io/Personal-Website/index.html)
 
 ## Structure
 
