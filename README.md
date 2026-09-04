@@ -1,7 +1,5 @@
 # Logan Marshall — Portfolio
 
-Personal portfolio site for mechanical engineering internship applications.
-Static HTML/CSS/JS, no build step.
 
 **Live site:** (https://loganmarsr.github.io/Personal-Website/index.html)
 
