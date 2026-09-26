@@ -1,7 +1,7 @@
 # Logan Marshall — Portfolio
 
 
-**Live site:** (https://loganmarsr.github.io/Personal-Website/index.html)
+**Live site:** (https://loganmarsr.github.io/Personal-Website/)
 
 ## Structure
 
